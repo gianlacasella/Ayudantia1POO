@@ -11,8 +11,8 @@ namespace Ayudantia1
          * 2. Getters+setters
          * 3. Constructores
          * 4. Metodos*/
-
         /*
+         * 
         Atributos: es buena practica ponerlos todos privados, y agregar los setters y getters
         para acceder a ellos. Es posible que tenga un atributo que queremos que pueda ser obtenido
         (leido por otras clases) pero no seteado, por lo que agregariamos solo un getter pero no un setter.
@@ -28,7 +28,6 @@ namespace Ayudantia1
 
         /* Solo agregamos un atributo publico si no queremos cumplir ninguna de las condiciones anteriores*/
         public string palabra1;
-
 
 
         /* Getters y setters: No tiene sentido crear un get/set para un atributo publico porque
@@ -52,6 +51,7 @@ namespace Ayudantia1
         // Suponiendo que queremos que tenga get/set sin ningun filtro
         public bool Booleano1 { get => this.booleano1; set => this.booleano1 = value; }
 
+
         /* Constructores: son metodos especiales que son invocados cuando se crea UNA INSTANCIA de la clase.
          * Los constructores se diferencian por los parametros que reciben. Ademas, podemos sobrecargarlos
          * llamandolos entre si y asi tener diferentes constructores. Supongamos que solo queremos usar dos 
@@ -70,8 +70,8 @@ namespace Ayudantia1
             mostrarAtributos();
         }
 
-        public EjemplosDeCodigo(int numero1) : this(numero1, 0, "Default")
-        { } // No necesitamos incluir codigo porque llamamos al constructor anterior pasandole los 3 valores obligatorios
+        public EjemplosDeCodigo(int numero1) : this(numero1, 0, "Default") { }
+         // No necesitamos incluir codigo porque llamamos al constructor anterior pasandole los 3 valores obligatorios
 
         /* Metodos: si un metodo solo se usa dentro de la misma clase, debe ser private.
          * Si se usa en la misma clase y clases hijas, debe ser protected.
@@ -80,13 +80,13 @@ namespace Ayudantia1
         // void-> "Nada". Usado para metodos que no retornan nada. En este caso, solo suma 10 al atributo numero1
         public void sumar10()
         {
-            Numero1 += 10;
+            this.numero1 += 10;
         }
 
         // Metodo privado porque solo es llamado desde adentro de la clase (constructor)
         private void mostrarAtributos()
         {
-            Console.WriteLine($"numero1: {this.numero1}, numero2: {this.numero2}, booleano1: {this.booleano1}," +
+            Console.WriteLine($"numero1: {this.numero1}, numero2: {this.numero2}, booleano1: {this.Booleano1}," +
                 $" palabra1: {this.palabra1}");
         }
 
@@ -96,8 +96,8 @@ namespace Ayudantia1
             mostrarAtributos(); //  Ejecutamos el metodo privado
             List<int> lista_auxiliar; // DECLARAMOS una lista de int
             lista_auxiliar = new List<int>(); // INICIALIZAMOS una lista de int
-            List<int> lista_auxiliar2 = new List<int>(); // DECLARAMOS e INICIALIZAMOS una lista de int
-            List<int> lista_auxiliar3 = new List<int>() { 1,2,3 }; // DECLARAMOS, INICIALIZAMOS y AGREGAMOS VALORES
+            List<int> lista_auxiliar2 = new List<int>(); // DECLARAMOS e INICIALIZAMOS una lista de int lista_auxiliar2 = []
+            List<int> lista_auxiliar3 = new List<int>() { 1,2,3 }; // DECLARAMOS, INICIALIZAMOS y AGREGAMOS VALORES lista_auxiliar2 = [1, 2, 3]
 
             // Equivalente a for numero in lista_auxiliar3 en Python
             foreach (int numero in lista_auxiliar3) 
@@ -107,7 +107,7 @@ namespace Ayudantia1
             }
 
             // Equivalente a for numero in range(10) en Python
-            for (int numero = 0; numero <= 9; numero++)
+            for (int numero = 0; numero <= 9; numero++) // ++numero y numero++
             {
                 lista_auxiliar2.Add(numero); // Agregamos el numero a la lista_auxiliar2
                 Console.WriteLine($"Numero agregado: {numero}. Longitud de la lista: {lista_auxiliar2.Count}");
@@ -116,7 +116,7 @@ namespace Ayudantia1
             // Creamos un nuevo diccionario cuyos keys son int y values son objetos de prueba
             Dictionary<int, ObjetoDePrueba> auxDict = new Dictionary<int, ObjetoDePrueba>();
             // Rellenamos el diccionario con objetos diferentes
-            for (int numero = 0; numero <= 49; numero++)
+            for (int numero = 0; numero <= 49; numero++) // for i in range(50)
             {
                 ObjetoDePrueba objeto_prueba = new ObjetoDePrueba(numero+1, numero+2, numero+3); // Creamos una instancia del objeto
                 auxDict.Add(numero, objeto_prueba);
@@ -152,7 +152,6 @@ namespace Ayudantia1
             // el atributo d de la clase padre porque es privado, pero si a su get/set (instancia.D)
             ObjetoDePruebaNieto11 instancia = new ObjetoDePruebaNieto11(3, true);
             Console.WriteLine($"\n\n{instancia.A}, {instancia.B}, {instancia.C}, {instancia.D}");
-
         }
     }
 }

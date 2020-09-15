@@ -118,9 +118,9 @@ namespace Ayudantia1
             // Rellenamos el diccionario con objetos diferentes
             for (int numero = 0; numero <= 49; numero++)
             {
-                ObjetoDePrueba prueba = new ObjetoDePrueba(numero+1, numero+2, numero+3); // Creamos una instancia del objeto
-                auxDict.Add(numero, prueba);
-                Console.WriteLine($"Numero agregado: {numero}. a: {prueba.A}, b: {prueba.B}, c:{prueba.C}");
+                ObjetoDePrueba objeto_prueba = new ObjetoDePrueba(numero+1, numero+2, numero+3); // Creamos una instancia del objeto
+                auxDict.Add(numero, objeto_prueba);
+                Console.WriteLine($"Numero agregado: {numero}. a: {objeto_prueba.A}, b: {objeto_prueba.B}, c:{objeto_prueba.C}");
             }
 
             // Podemos acceder a los values con auxDict.Values y a los keys con auxDict.Keys
@@ -152,7 +152,7 @@ namespace Ayudantia1
             // el atributo d de la clase padre porque es privado, pero si a su get/set (instancia.D)
             ObjetoDePruebaNieto11 instancia = new ObjetoDePruebaNieto11(3, true);
             Console.WriteLine($"\n\n{instancia.A}, {instancia.B}, {instancia.C}, {instancia.D}");
-            
+
         }
     }
 }

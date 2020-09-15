@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Ayudantia1
 {
@@ -6,7 +7,8 @@ namespace Ayudantia1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            EjemplosDeCodigo ejemplos = new EjemplosDeCodigo(0);
+            ejemplos.mostrarEjemplos();
         }
     }
 }
